@@ -1,49 +1,49 @@
 const playlistArea = document.getElementById("musicDisplay");
 
-const refresh_token = "AQCfDB3bTof-_EkswipRocqlcHa_560oI24tOC9brWemEHwrIXhih8Ep5Y1edQ8I8FYKWd_D3GjYGcJ__evxItB_C8xyb53yN70jMtFQ-9jGZqMfGfHeMXGfjaoSC6IxnbQ";
+// Get the hash of the url
+const hash = window.location.hash
+    .substring(1)
+    .split('&')
+    .reduce(function (initial, item) {
+        if (item) {
+            var parts = item.split('=');
+            initial[parts[0]] = decodeURIComponent(parts[1]);
+        }
+        return initial;
+    }, {});
+window.location.hash = '';
 
-const base64Auth = "OGJkN2M1NzM2OTZkNDJkNTk5ZjNlZWMxMDM5MDRkY2M6MDU4NzQ3NjlmODI4NDRiM2IwZmRjYjZiNDg0NDExYjc";
+// Set token
+let _token = hash.access_token;
 
-const clientID = "8bd7c573696d42d599f3eec103904dcc";
+const authEndpoint = 'https://accounts.spotify.com/authorize';
 
-// check for existing access token
-if (localStorage.getItem("access_token") == null || localStorage.getItem("token_date") < (Math.floor(Date.now() / 1000) - 3600)) {
-    console.log("Access token expired or does not exist. Getting a new access token");
-    getAccessToken();
-} else {
-    console.log("Using access token: " + localStorage.getItem("access_token"));
+// Replace with your app's client ID, redirect URI and desired scopes
+const clientId = '8bd7c573696d42d599f3eec103904dcc';
+const redirectUri = 'https://jsnicholas.github.io/FitMix/';
+const scopes = [
+    'user-top-read'
+];
+
+// If there is no token, redirect to Spotify authorization
+if (!_token) {
+    window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
 }
 
-// Get a new token for the session
-function getAccessToken() {
-    localStorage.setItem("token_date", Math.floor(Date.now() / 1000))
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Basic " + base64Auth);
-    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+// Make a call using the token
+// $.ajax({
+//     url: "https://api.spotify.com/v1/me/top/artists",
+//     type: "GET",
+//     beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + _token); },
+//     success: function (data) {
+//         // Do something with the returned data
+//         data.items.map(function (artist) {
+//             let item = $('<li>' + artist.name + '</li>');
+//             item.appendTo($('#top-artists'));
+//         });
+//     }
+// });
 
-    var urlencoded = new URLSearchParams();
-    urlencoded.append("refresh_token", refresh_token);
-    urlencoded.append("grant_type", "refresh_token");
-    urlencoded.append("client_id", clientID);
-
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: urlencoded,
-        redirect: 'follow'
-    };
-
-    fetch("https://accounts.spotify.com/api/token", requestOptions)
-        .then(response => response.text())
-        .then(result => saveToken(result))
-        .catch(error => console.log('error', error));
-
-}
-function saveToken(result) {
-    const accessToken = JSON.parse(result).access_token;
-    localStorage.setItem("access_token", accessToken);
-
-}
 // define form elements as variables
 const submitBtn = document.getElementById("submitBtn");
 const genreSelection = document.querySelectorAll('input[name="genre"]');
@@ -53,7 +53,7 @@ const tempoSelection = document.querySelectorAll('input[name="tempo"]');
 // fetch the user options when they click the submit button
 function getRecommendations(selectedGenre, selectedTempo) {
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer " + localStorage.getItem("access_token"));
+    myHeaders.append("Authorization", "Bearer " + _token);
 
     var requestOptions = {
         method: 'GET',
@@ -79,5 +79,3 @@ function displayResults(result) {
         playlistArea.insertAdjacentHTML("beforeend", songItem);
     }
 }
-
-// 
