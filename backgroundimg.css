@@ -1,9 +1,10 @@
-#music-quiz {
-    background-image: url('./Develop/Images/music.jpeg')!important;
-    background-size: cover !important;
-    opacity: 0.9;
+body {
+    background-image: url(./Develop/Images/pentagon.jpg);
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-attachment: fixed;
 }
-
 .hidden.transition {
     display: none;
     visibility: hidden;

@@ -60,12 +60,6 @@ startButton.addEventListener('click', function () {
     changePage("home-page", "music-quiz")
 })
 
-function startWorkout(e) {
-    e.preventDefault()
-    console.log('click')
-}
-
-
 // set home page saved workouts div as variable
 const savedWorkoutArea = document.getElementById("userSavedWorkouts")
 //function to load from localstorage. Pull the array with objects, and display the one that is relevant to you
@@ -73,7 +67,7 @@ const savedWorkoutArea = document.getElementById("userSavedWorkouts")
 function displayWorkoutFromLS() {
     var savedWorkouts = JSON.parse(localStorage.getItem("savedCollections"));
     if (savedWorkouts == null) {
-        savedWorkoutArea.insertAdjacentHTML("beforeend", `<div class="ui segment">      <img class="ui centered medium image" style="border-radius:10px;" src="Develop/Images/fitmix.jpg"><h4>Welcome! Click "Create New Workout" to get started!</h4></div>`)
+        savedWorkoutArea.insertAdjacentHTML("beforeend", `<h2>Welcome! Click "Create New Workout" to get started!</h4>`)
 
     } else {
         //pull from respective keys in LS for workout and playlist 
@@ -128,16 +122,6 @@ document.getElementById("collection-name").addEventListener("keydown", function 
         document.getElementById("save-collection").classList.remove("disabled");
     }
 })
-//function to clear workout screen and display home screen
-// function returnHome() {
-//     //clear workout screen
-//     changePage("quizResults", "home-screen")
-
-//     //display home screen again
-//     homeWorkouts.classList.remove("hidden transition")
-// }
-
-// call the display workouts function
 displayWorkoutFromLS();
 
 

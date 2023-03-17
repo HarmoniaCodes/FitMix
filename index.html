@@ -27,13 +27,12 @@
 
 <!-- <body class="ui container" style="background:rgba(122, 219, 224, 0.473);"> -->
 
-<body class="ui container"
-  style="background-image: url(./Develop/Images/pentagon.jpg); height: 400px; background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+<body class="ui container">
   <!-- page 1 Home screen-->
-  <section class="ui inverted segment" id="home-page">
-    <h4 class="ui horizontal inverted divider">
+  <section class="ui segment" id="home-page">
+    <h1 class="ui horizontal divider">
       FitMix
-    </h4>
+    </h1>
     <div class="ui container">
       <div class="three wide column mobile row" id="userSavedWorkouts">
       </div>
@@ -44,11 +43,10 @@
           class="right arrow icon"></i></button>
     </div>
   </section>
-  <!-- page 2 Quiz -->
-  <section class="ui container hidden transition" id="music-quiz">
-    <h1>Music Quiz</h1>
 
-    <h3>Help us create a custom workout for you by selecting your choice in music below! </h3>
+  <!-- page 2 Quiz -->
+  <section class="ui segment hidden transition" id="music-quiz">
+    <h1 class="ui horizontal divider">Select Your Workout Options</h1>
     <form class="ui form">
       <div class="field">Choose a Genre:</div>
       <!-- Pop Genre Selector -->
@@ -167,7 +165,7 @@
         </div>
       </div>
     </form>
-    <button id="create-workout" class="positive ui button">Select Category</button>
+    <button id="create-workout" class="positive ui button">Create My Workout</button>
 
     <!-- Error modal for incomplete quiz options -->
     <div class="ui basic modal">
@@ -187,72 +185,59 @@
   <!-- page 3 Exercises & music results-->
 
   <!-- <img class="ui centered large image" src="./Develop/Images/music2.jpeg"> -->
-  <section class="ui inverted segment hidden transition" id="quizResults">
-    <h4 class="ui horizontal inverted divider">Your FitMix Workout</h4>
+  <section class="ui segment hidden transition" id="quizResults">
+    <h4 class="ui horizontal divider">Your FitMix Workout</h4>
     <!-- First Column of Workouts -->
-    <div class="ui two column grid">
-      <div class="column">
-        <!-- Workout 1 -->
-        <div class="ui segment">
-          <img class="ui small image" src="./Develop/Images/cardio.jpeg">
-          <div class="content">
-            <h3 id="workoutName0"></h3>
-            <div id="workoutDesc0"></div>
-          </div>
+    <div class="ui middle aligned divided list">
+      <!-- Workout 1 -->
+      <div class="item">
+        <div class="content">
+          <h3 id="workoutName0"></h3>
+          <div id="workoutDesc0"></div>
         </div>
-        <!-- Workout 2 -->
-        <div class="ui segment">
-          <img class="ui top aligned small image" src="./Develop/Images/cardio.jpeg">
-          <h3 id="workoutName1"></h3>
-          <div id="workoutDesc1"></div>
-        </div>
-        <!-- Workout 3 -->
-        <div class="ui segment">
-          <img class="ui top aligned small image" src="./Develop/Images/cardio.jpeg">
-          <h3 id="workoutName2"></h3>
-          <div id="workoutDesc2"></div>
-        </div>
-        <!-- User Playlist is Generated Here -->
       </div>
-      <!-- Second Column of Workouts -->
+      <!-- Workout 2 -->
+      <div class="item">
+        <h3 id="workoutName1"></h3>
+        <div id="workoutDesc1"></div>
+      </div>
+      <!-- Workout 3 -->
+      <div class="item">
+        <h3 id="workoutName2"></h3>
+        <div id="workoutDesc2"></div>
+      </div>
       <!-- Workout 4 -->
-      <div class="column">
-        <div class="ui segment">
-          <img class="ui top aligned small image" src="./Develop/Images/cardio.jpeg">
-          <h3 id="workoutName3"></h3>
-          <div id="workoutDesc3"></div>
-        </div>
-        <!-- Workout 5 -->
-        <div class="ui segment">
-          <img class="ui top aligned small image" src="./Develop/Images/cardio.jpeg">
-          <h3 id="workoutName4"></h3>
-          <div id="workoutDesc4"></div>
-        </div>
-        <!-- Workout 6 -->
-        <div class="ui segment">
-          <img class="ui top aligned small image" src="./Develop/Images/cardio.jpeg">
-          <h3 id="workoutName5"></h3>
-          <div id="workoutDesc5"></div>
-        </div>
+      <div class="item">
+        <h3 id="workoutName3"></h3>
+        <div id="workoutDesc3"></div>
       </div>
-      <section class="ui inverted segment container">
-        <div class="ui inverted segment container" id="musicDisplay"></div>
-      </section>
-      <!-- Save workout options -->
-      <div class="ui grid centered container">
-        <div class="ui buttons">
-          <button class="ui positive button" id="save-workout">Save workout</button>
-          <div class="or"></div>
-          <button class="ui negative button" id="return-home-button">Return Home</button>
-        </div>
+      <!-- Workout 5 -->
+      <div class="item">
+        <h3 id="workoutName4"></h3>
+        <div id="workoutDesc4"></div>
       </div>
+      <!-- Workout 6 -->
+      <div class="item">
+        <h3 id="workoutName5"></h3>
+        <div id="workoutDesc5"></div>
+      </div>
+    </div>
+    <section class="ui segment container">
+      <div class="ui container" id="musicDisplay"></div>
+    </section>
+    <!-- Save workout options -->
+    <div class="ui grid centered container">
+      <div class="ui buttons">
+        <button class="ui positive button" id="save-workout">Save workout</button>
+        <div class="or"></div>
+        <button class="ui negative button" id="return-home-button">Return Home</button>
+      </div>
+    </div>
   </section>
 
   <!-- page 4 naming playlist-->
   <section class="ui modal" id="save-workout-modal">
-    <img class="ui centered medium image" src="./Develop/Images/img4.jpeg">
-
-    <h3 style="color:rgb(85, 175, 187);">Please name your playlist bellow:</h3>
+    <h3 style="color:rgb(85, 175, 187);">Please name your playlist:</h3>
     <form class="ui fluid form">
       <div class="field" id="collectionInputForm">
         <input type="text" placeholder="playlist name" id="collection-name">

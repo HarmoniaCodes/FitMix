@@ -27,7 +27,7 @@ Please see their GitHub portfolios below:
 
 - [Gabriela Reyna](https://github.com/gabrielarec)
 - [Nabeel Khan](https://github.com/nabeekha)
-- [Nick Johnson](http://github.com/harmoniacodes)
+- [Nick Johnson](http://github.com/jsnicholas)
 - [Drew Hart](https://github.com/loyallhart)
 
 ## Screenshots
