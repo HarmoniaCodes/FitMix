@@ -25,7 +25,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = '8bd7c573696d42d599f3eec103904dcc';
-const redirectUri = 'http://localhost:5500';
+const redirectUri = 'https://jsnicholas.github.io/FitMix/';
 const scopes = [
     'user-top-read'
 ];
