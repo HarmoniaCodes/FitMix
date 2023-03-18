@@ -18,7 +18,7 @@ window.location.hash = '';
 // Set token & save it to LS
 let _token = hash.access_token;
 if (_token) {
-    localStorage.setItem("access_token", true)
+    localStorage.setItem("access_token", _token)
 }
 
 const authEndpoint = 'https://accounts.spotify.com/authorize';
@@ -47,7 +47,7 @@ const tempoSelection = document.querySelectorAll('input[name="tempo"]');
 // fetch the user options when they click the submit button
 function getRecommendations(selectedGenre, selectedTempo) {
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer " + _token);
+    myHeaders.append("Authorization", "Bearer " + localStorage.getItem("access_token"));
 
     var requestOptions = {
         method: 'GET',
