@@ -1,5 +1,7 @@
 const playlistArea = document.getElementById("musicDisplay");
 
+// OAuth handling
+// https://glitch.com/edit/#!/spotify-implicit-grant?path=script.js%3A12%3A26
 // Get the hash of the url
 const hash = window.location.hash
     .substring(1)
@@ -13,37 +15,29 @@ const hash = window.location.hash
     }, {});
 window.location.hash = '';
 
-// Set token
+// Set token & save it to LS
 let _token = hash.access_token;
+if (_token) {
+    localStorage.setItem("access_token", true)
+}
 
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = '8bd7c573696d42d599f3eec103904dcc';
-const redirectUri = 'https://jsnicholas.github.io/FitMix/';
+const redirectUri = 'http://localhost:5500';
 const scopes = [
     'user-top-read'
 ];
-
 // If there is no token, redirect to Spotify authorization
-if (!_token) {
-    window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
+// TODO: change this to a button that prompts the user to login to spotify
+// if (localStorage.getItem("access_token") == undefined) {
+if (localStorage.getItem("access_token") == undefined) {
+    document.getElementById("firstBtnArea").innerHTML = `<button class="ui green right labeled icon button" id="loginBtn">Log in with Spotify</button>`
+    let loginBtn = document.getElementById("loginBtn");
+    loginBtn.addEventListener("click", function () { window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true` })
+
 }
-
-// Make a call using the token
-// $.ajax({
-//     url: "https://api.spotify.com/v1/me/top/artists",
-//     type: "GET",
-//     beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + _token); },
-//     success: function (data) {
-//         // Do something with the returned data
-//         data.items.map(function (artist) {
-//             let item = $('<li>' + artist.name + '</li>');
-//             item.appendTo($('#top-artists'));
-//         });
-//     }
-// });
-
 // define form elements as variables
 const submitBtn = document.getElementById("submitBtn");
 const genreSelection = document.querySelectorAll('input[name="genre"]');

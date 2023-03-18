@@ -11,24 +11,20 @@ createWorkout.addEventListener('click', function () {
     for (const radioButton of genreSelection) {
         if (radioButton.checked) {
             selectedGenre = radioButton.value;
-            console.log(selectedGenre);
         }
     }
     for (const radioButton of tempoSelection) {
         if (radioButton.checked) {
             selectedTempo = radioButton.value;
-            console.log(selectedTempo);
         }
     }
     for (const radioButton of categorySelection) {
         if (radioButton.checked) {
             selectedCategory = radioButton.value;
-            console.log(selectedCategory);
         }
     }
     // check if user has selected all 3 options
     if (selectedGenre == undefined || selectedTempo == undefined || selectedCategory === undefined) {
-        console.log("error, quiz not finished")
         $('.ui.basic.modal')
             .modal('show');
     } else {
@@ -67,7 +63,7 @@ const savedWorkoutArea = document.getElementById("userSavedWorkouts")
 function displayWorkoutFromLS() {
     var savedWorkouts = JSON.parse(localStorage.getItem("savedCollections"));
     if (savedWorkouts == null) {
-        savedWorkoutArea.insertAdjacentHTML("beforeend", `<h2>Welcome! Click "Create New Workout" to get started!</h4>`)
+        savedWorkoutArea.insertAdjacentHTML("beforeend", `<h2>Welcome! Click the button below to get started!</h4>`)
 
     } else {
         //pull from respective keys in LS for workout and playlist 

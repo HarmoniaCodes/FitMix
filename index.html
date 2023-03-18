@@ -8,174 +8,181 @@
   <!-- Get semantic UI css framework from CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
   <!-- CSS Adjustments for background images -->
-  <link rel="stylesheet" href="./backgroundimg.css">
+  <link rel="stylesheet" href="./styles.css">
   <!-- get jQuery library from CDN -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <!-- Import spotify search script -->
-  <script src="./Develop/spotifySearch.js" defer></script>
   <!-- Import workout script -->
   <script src="./Develop/wger.js" defer></script>
   <!-- Semantic UI script -->
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js" defer></script>
   <!-- Script.JS file  -->
   <script src="./Develop/script.js" defer></script>
+  <!-- Import spotify search script -->
+  <script src="./Develop/spotifySearch.js" defer></script>
   <title>FitMix</title>
 
 
 </head>
 
-<!-- <body class="ui container" style="background:rgba(122, 219, 224, 0.473);"> -->
 
-<body class="ui container">
+<body>
   <!-- page 1 Home screen-->
-  <section class="ui segment" id="home-page">
-    <h1 class="ui horizontal divider">
-      FitMix
-    </h1>
-    <div class="ui container">
-      <div class="three wide column mobile row" id="userSavedWorkouts">
-      </div>
+  <section class="ui center aligned container" id="home-page">
+    <div class="ui segment">
+      <h1 class="ui horizontal divider">
+        FitMix
+      </h1>
+      <div class="ui container">
+        <div class="three wide column mobile row" id="userSavedWorkouts">
+        </div>
 
-    </div>
-    <div class="right-aligned">
-      <button class="ui green right labeled icon button" id="first-button">Create New Workout<i
-          class="right arrow icon"></i></button>
+      </div>
+      <div class="right-aligned" id="firstBtnArea">
+        <button class="ui green right labeled icon button" id="first-button">Create New Workout<i
+            class="right arrow icon"></i></button>
+      </div>
     </div>
   </section>
 
   <!-- page 2 Quiz -->
-  <section class="ui segment hidden transition" id="music-quiz">
-    <h1 class="ui horizontal divider">Select Your Workout Options</h1>
-    <form class="ui form">
-      <div class="field">Choose a Genre:</div>
-      <!-- Pop Genre Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userGenre_pop" name="genre"
-            value="5YGY8feqx7naU7z4HrwZM6">
-          <label for="userGenre_pop">Pop</label>
+  <section class="ui center aligned container hidden transition" id="music-quiz">
+    <div class="ui segment">
+      <h1 class="ui horizontal divider">Select Your Workout Options</h1>
+      <form class="ui form">
+        <div class="field">Choose a Genre:</div>
+        <!-- Pop Genre Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userGenre_pop" name="genre"
+              value="5YGY8feqx7naU7z4HrwZM6">
+            <label for="userGenre_pop">Pop</label>
+          </div>
         </div>
-      </div>
-      <!-- rnb Genre Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userGenre_rap" name="genre"
-            value="7tYKF4w9nC0nq9CsPZTHyP">
-          <label for="userGenre_rap">RnB</label>
+        <!-- rnb Genre Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userGenre_rap" name="genre"
+              value="7tYKF4w9nC0nq9CsPZTHyP">
+            <label for="userGenre_rap">RnB</label>
+          </div>
         </div>
-      </div>
-      <!-- Latin Genre Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userGenre_latin" name="genre"
-            value="4q3ewBCX7sLwd24euuV69X">
-          <label for="userGenre_latin">Latin</label>
+        <!-- Latin Genre Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userGenre_latin" name="genre"
+              value="4q3ewBCX7sLwd24euuV69X">
+            <label for="userGenre_latin">Latin</label>
+          </div>
         </div>
-      </div>
-      <!-- Club Genre Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userGenre_club" name="genre"
-            value="0SfsnGyD8FpIN4U4WCkBZ5">
-          <label for="userGenre_club">EDM</label>
+        <!-- Club Genre Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userGenre_club" name="genre"
+              value="0SfsnGyD8FpIN4U4WCkBZ5">
+            <label for="userGenre_club">EDM</label>
+          </div>
         </div>
-      </div>
-    </form>
-    <!-- Music Intensity Selector Form -->
-    <form class="ui form">
-      <div class="field">Choose a Music Intensity:</div>
-      <!-- Relaxed Tempo Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="tempo_slow" name="tempo" value="0.4">
-          <label for="tempo_slow">Relaxed</label>
+      </form>
+      <!-- Music Intensity Selector Form -->
+      <form class="ui form">
+        <div class="field">Choose a Music Intensity:</div>
+        <!-- Relaxed Tempo Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="tempo_slow" name="tempo" value="0.4">
+            <label for="tempo_slow">Relaxed</label>
+          </div>
         </div>
-      </div>
-      <!-- Intense Tempo Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="tempo_fast" name="tempo" value="1">
-          <label for="tempo_fast">Intense</label>
+        <!-- Intense Tempo Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="tempo_fast" name="tempo" value="1">
+            <label for="tempo_fast">Intense</label>
+          </div>
         </div>
-      </div>
 
-    </form>
-    <!-- Workout Category Selector -->
-    <form id="categorySelection" class="ui form">
-      <div class="field">Chose Workout Category:</div>
-      <!-- Abs Category Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_abs" name="category" value="10">
-          <label for="userCategory_abs">Abs</label>
+      </form>
+      <!-- Workout Category Selector -->
+      <form id="categorySelection" class="ui form">
+        <div class="field">Chose Workout Category:</div>
+        <!-- Abs Category Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_abs" name="category"
+              value="10">
+            <label for="userCategory_abs">Abs</label>
+          </div>
         </div>
-      </div>
-      <!-- Arms Category Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_arms" name="category" value="8">
-          <label for="userCategory_arms">Arms</label>
+        <!-- Arms Category Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_arms" name="category"
+              value="8">
+            <label for="userCategory_arms">Arms</label>
+          </div>
         </div>
-      </div>
-      <!-- Back Category Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_back" name="category" value="12">
-          <label for="userCategory_back">Back</label>
+        <!-- Back Category Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_back" name="category"
+              value="12">
+            <label for="userCategory_back">Back</label>
+          </div>
         </div>
-      </div>
-      <!-- Calves Category Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_calves" name="category"
-            value="14">
-          <label for="userCategory_calves">Calves</label>
+        <!-- Calves Category Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_calves" name="category"
+              value="14">
+            <label for="userCategory_calves">Calves</label>
+          </div>
         </div>
-      </div>
-      <!-- Cardio Category Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_cardio" name="category"
-            value="15">
-          <label for="userCategory_cardio">Cardio</label>
+        <!-- Cardio Category Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_cardio" name="category"
+              value="15">
+            <label for="userCategory_cardio">Cardio</label>
+          </div>
         </div>
-      </div>
-      <!-- Chest Category Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_chest" name="category"
-            value="11">
-          <label for="userCategory_chest">Chest</label>
+        <!-- Chest Category Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_chest" name="category"
+              value="11">
+            <label for="userCategory_chest">Chest</label>
+          </div>
         </div>
-      </div>
-      <!-- Legs Category Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_legs" name="category" value="9">
-          <label for="userCategory_legs">Legs</label>
+        <!-- Legs Category Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_legs" name="category"
+              value="9">
+            <label for="userCategory_legs">Legs</label>
+          </div>
         </div>
-      </div>
-      <!-- Shoulders Category Selector -->
-      <div class="field">
-        <div class="ui toggle checkbox">
-          <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_shoulders" name="category"
-            value="13">
-          <label for="userCategory_shoulders">Shoulders</label>
+        <!-- Shoulders Category Selector -->
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="radio" class="hidden" readonly="" tabindex="0" id="userCategory_shoulders" name="category"
+              value="13">
+            <label for="userCategory_shoulders">Shoulders</label>
+          </div>
         </div>
-      </div>
-    </form>
-    <button id="create-workout" class="positive ui button">Create My Workout</button>
+      </form>
+      <button id="create-workout" class="positive ui button">Create My Workout</button>
 
-    <!-- Error modal for incomplete quiz options -->
-    <div class="ui basic modal">
-      <i class="close icon"></i>
-      <div class="header">
-        Error: Please select a genre, intensity, and workout category to continue.
-      </div>
-      <div class="actions">
-        <div class="ui black deny button">
-          Try Again
+      <!-- Error modal for incomplete quiz options -->
+      <div class="ui basic modal">
+        <i class="close icon"></i>
+        <div class="header">
+          Error: Please select a genre, intensity, and workout category to continue.
+        </div>
+        <div class="actions">
+          <div class="ui black deny button">
+            Try Again
+          </div>
         </div>
       </div>
     </div>
@@ -185,53 +192,56 @@
   <!-- page 3 Exercises & music results-->
 
   <!-- <img class="ui centered large image" src="./Develop/Images/music2.jpeg"> -->
-  <section class="ui segment hidden transition" id="quizResults">
-    <h4 class="ui horizontal divider">Your FitMix Workout</h4>
-    <!-- First Column of Workouts -->
-    <div class="ui middle aligned divided list">
-      <!-- Workout 1 -->
-      <div class="item">
-        <div class="content">
-          <h3 id="workoutName0"></h3>
-          <div id="workoutDesc0"></div>
+  <section class="ui center aligned container hidden transition" id="quizResults">
+    <div class="ui segment">
+      <h4 class="ui horizontal divider">Your FitMix Workout</h4>
+      <!-- First Column of Workouts -->
+      <div class="ui middle aligned divided list">
+        <!-- Workout 1 -->
+        <div class="item">
+          <div class="content">
+            <h3 id="workoutName0"></h3>
+            <div id="workoutDesc0"></div>
+          </div>
+        </div>
+        <!-- Workout 2 -->
+        <div class="item">
+          <h3 id="workoutName1"></h3>
+          <div id="workoutDesc1"></div>
+        </div>
+        <!-- Workout 3 -->
+        <div class="item">
+          <h3 id="workoutName2"></h3>
+          <div id="workoutDesc2"></div>
+        </div>
+        <!-- Workout 4 -->
+        <div class="item">
+          <h3 id="workoutName3"></h3>
+          <div id="workoutDesc3"></div>
+        </div>
+        <!-- Workout 5 -->
+        <div class="item">
+          <h3 id="workoutName4"></h3>
+          <div id="workoutDesc4"></div>
+        </div>
+        <!-- Workout 6 -->
+        <div class="item">
+          <h3 id="workoutName5"></h3>
+          <div id="workoutDesc5"></div>
+        </div>
+        <section class="item">
+          <h4 class="ui horizontal divider">Your Playlist</h4>
+          <div class="ui container" id="musicDisplay"></div>
+        </section>
+        <!-- Save workout options -->
+        <div class="ui buttons">
+          <button class="ui positive button" id="save-workout">Save workout</button>
+          <div class="or"></div>
+          <button class="ui negative button" id="return-home-button">Return Home</button>
         </div>
       </div>
-      <!-- Workout 2 -->
-      <div class="item">
-        <h3 id="workoutName1"></h3>
-        <div id="workoutDesc1"></div>
-      </div>
-      <!-- Workout 3 -->
-      <div class="item">
-        <h3 id="workoutName2"></h3>
-        <div id="workoutDesc2"></div>
-      </div>
-      <!-- Workout 4 -->
-      <div class="item">
-        <h3 id="workoutName3"></h3>
-        <div id="workoutDesc3"></div>
-      </div>
-      <!-- Workout 5 -->
-      <div class="item">
-        <h3 id="workoutName4"></h3>
-        <div id="workoutDesc4"></div>
-      </div>
-      <!-- Workout 6 -->
-      <div class="item">
-        <h3 id="workoutName5"></h3>
-        <div id="workoutDesc5"></div>
-      </div>
-    </div>
-    <section class="ui segment container">
-      <div class="ui container" id="musicDisplay"></div>
-    </section>
-    <!-- Save workout options -->
-    <div class="ui grid centered container">
-      <div class="ui buttons">
-        <button class="ui positive button" id="save-workout">Save workout</button>
-        <div class="or"></div>
-        <button class="ui negative button" id="return-home-button">Return Home</button>
-      </div>
+
+
     </div>
   </section>
 

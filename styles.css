@@ -1,0 +1,23 @@
+body {
+  background-color: black;
+}
+
+.hidden.transition {
+    display: none;
+    visibility: hidden;
+  }
+  #firstBtnArea, #create-workout{
+    margin:2rem;
+  }
+#home-page, #music-quiz, #quizResults {
+  margin-top:1rem;
+}
+#save-workout-modal{
+  padding:1.5rem;
+}
+@media only screen and (min-width:600px){
+  #home-page, #music-quiz, #quizResults{
+    margin-top: 2rem;
+    width: 30rem;
+  }
+}
