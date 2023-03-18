@@ -33,7 +33,7 @@ const scopes = [
 // TODO: change this to a button that prompts the user to login to spotify
 // if (localStorage.getItem("access_token") == undefined) {
 if (localStorage.getItem("access_token") == undefined) {
-    document.getElementById("firstBtnArea").innerHTML = `<button class="ui green right labeled icon button" id="loginBtn">Log in with Spotify</button>`
+    document.getElementById("firstBtnArea").innerHTML = `<button class="ui green button" id="loginBtn">Log in with Spotify</button>`
     let loginBtn = document.getElementById("loginBtn");
     loginBtn.addEventListener("click", function () { window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true` })
 

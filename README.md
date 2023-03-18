@@ -1,15 +1,19 @@
-# FitMix Application
+# FitMix
 
 ## Description
 
-Workout app with music
+_Please note_: this application is in Developer Mode with Spotify's API. Playlist generation will not work unless access is requested. If you'd like to test the app, please contact me at: jsnicholas @ pm.me
 
-This application was designed in order to enable an end user to create a workout and associated playlist that would help motivate them at the gym. The application makes use of HTML, CSS, JavaScript and several APIs. Our team utilized the semantic UI library and Jquery libraries to design our application. Through this, we learned about various portions of branching and how to link multiple JavaScript files into one. Additionally, we learned how to better utilize 3rd party APIs.
+FitMix is a workout and playlist generator that helps you get motivated in the gym.
+
+Technologies used: Spotify Music and oEmbed APIs, wger Workout API, Semantic UI CSS Framework, Javascript, HTML, and jQuery.
+
+This is a fork from the original project, which aims to make the Spotify implementation more secure and further utilize the Semantic UI framework. The original code can be found here: https://github.com/gabrielarec/FitMix
 
 ## Links
 
-[GitHub repository](https://github.com/gabrielarec/FitMix)  
-[Deployed Site](https://gabrielarec.github.io/FitMix/)
+[GitHub repository](https://github.com/jsnicholas/FitMix)  
+[Deployed Site](https://jsnicholas.github.io/FitMix/)
 
 ## Application Flow
 
@@ -25,19 +29,16 @@ https://docs.google.com/presentation/d/1xG20oh73wriI7COidxMGC3aCWvp3qsngkayhAI96
 The primary team members who were involved in this were Nick Johnson, Drew Hart, Gabriela Reyna and Nabeel Khan.
 Please see their GitHub portfolios below:
 
+- [Nick Johnson](http://github.com/jsnicholas)
 - [Gabriela Reyna](https://github.com/gabrielarec)
 - [Nabeel Khan](https://github.com/nabeekha)
-- [Nick Johnson](http://github.com/jsnicholas)
 - [Drew Hart](https://github.com/loyallhart)
 
 ## Screenshots
 
-Screenshots of the application are visible at the following location:
-![Application-Home-Page](./assets/FitMix%20app%20screenshot-1.png)
-
-![Application-Music-Quiz](./assets/FitMix%20Music%20Quiz.png)
-
-![Application-workouts](./assets/FitMix%20exercise%20and%20playlist%20screen.png)
+<img src="./assets/screenshot1.png" width="400px">
+<img src="./assets/screenshot2.png" width="400px">
+<img src="./assets/screenshot3.png" width="400px">
 
 ## License
 
@@ -62,18 +63,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-## Features
-
-Our application uses several primary features:
-
-1. Spotify API to pull in recommended music based on user selection results
-2. Workout API to pull in recommended exercises based on user selection results
-3. Semantic UI Library to create visuals of the workout and playlist pages
-4. The ability to store pages and switch between them
-
-## How to Contribute
-
-Areas where the application's functionality can be built out are: use of Semantic UI and implementation of pause and play buttons from the Spotify Music Player API. To reference this material, please feel free to see the GitHub repository above and create a pull request with your code
-
-To reference the source code, please see the link to our GitHub repository: https://github.com/gabrielarec/FitMix
